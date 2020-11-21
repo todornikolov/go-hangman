@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/todornikolov/gogame/internal"
+	"github.com/todornikolov/go-hangman/internal"
 )
 
 func main() {

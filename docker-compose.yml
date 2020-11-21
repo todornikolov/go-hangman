@@ -7,4 +7,4 @@ services:
       context: .
       dockerfile: docker/app/Dockerfile
     volumes:
-      - .:/go/go-game
+      - .:/go/go-hangman
