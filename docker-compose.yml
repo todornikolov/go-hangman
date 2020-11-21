@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   app:
-    container_name: go-game
+    container_name: go-hangman
     build:
       context: .
       dockerfile: docker/app/Dockerfile
