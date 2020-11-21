@@ -1,0 +1,10 @@
+version: '3.5'
+
+services:
+  app:
+    container_name: go-game
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    volumes:
+      - .:/go/go-game
