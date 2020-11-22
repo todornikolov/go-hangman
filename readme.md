@@ -11,6 +11,10 @@ Put a letter to guess a word in an amount of turns.
 
 #### How to run
 
-`docoker-compose build`
+Pull the repository and inside the project directory run:
 
-`docker run -i -t go-hangman scripts/run-app.sh`
+`docker build --tag go-hangman:0.1 -f ./docker/app/Dockerfile --rm .`
+
+Run the container with the following:
+
+`docker run -i -t go-hangman:0.1 scripts/run-app.sh`
