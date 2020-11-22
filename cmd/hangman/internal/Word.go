@@ -8,7 +8,7 @@ import (
 )
 
 func GameWord(wordChars [] string, inputChars [] string) int {
-	ScreenText(1, 0, "")
+	GameScreen()
 
 	hitCount := 0
 	for _, wordValue := range wordChars {
@@ -20,9 +20,16 @@ func GameWord(wordChars [] string, inputChars [] string) int {
 		}
 	}
 
-	ScreenText(0, 1, "")
-
 	return hitCount
+}
+
+func GameScreen() {
+	ScreenClear()
+	ScreenText(0, 1, "Welcome to Hangman demo game written in Go, version 0.1")
+	ScreenText(0, 2,
+		"Hangman is a paper and pencil guessing game for two or more players.\n" +
+			"One player thinks of a word, phrase or sentence and the other(s) tries to guess\n" +
+			"it by suggesting letters within a certain number of guesses.")
 }
 
 func showCharOrMask(value string, inputChars [] string) (string, bool) {
@@ -45,7 +52,11 @@ func GameState(wordChars [] string, inputChars [] string) bool {
 	return true
 }
 
-func WordInput() string {
+func WordInput(attempts int, maxAttempts int) string {
+	ScreenText(1, 0, "")
+
+	fmt.Printf("(%d/%d) Try a letter: ", attempts, maxAttempts)
+
 	reader := bufio.NewReader(os.Stdin)
 	inputKeyboardTry, _ := reader.ReadString('\n')
 

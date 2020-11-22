@@ -14,19 +14,18 @@ func GameLoop(gameWordString string, gameMaxAttempts int) {
 	GameWord(gameWordArray, inputKeyboard)
 
 	for {
-		fmt.Printf("(%d/%d) Try a letter: ", attemptCount, gameMaxAttempts)
-		inputKeyboard = append(inputKeyboard, WordInput())
+		inputKeyboard = append(inputKeyboard, WordInput(attemptCount, gameMaxAttempts))
 
 		hitCount, attemptCount = countAttempts(GameWord(gameWordArray, inputKeyboard), hitCount, attemptCount)
 
 		if GameState(gameWordArray, inputKeyboard) {
-			ScreenText(1, 1, "Congrats! You won!")
+			ScreenText(2, 1, "Congrats! You won!")
 			break
 		}
 
 		if attemptCount >= gameMaxAttempts {
 			ScreenText(
-				1,
+				2,
 				1,
 				fmt.Sprintf("Game over! The word was \"%s\". Try again.", gameWordString),
 			)
