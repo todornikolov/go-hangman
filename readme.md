@@ -1,4 +1,4 @@
-### Go game of Hangman version 0.1
+### Go game of Hangman
 
 Put a letter to guess a word in an amount of turns.
 
@@ -7,7 +7,7 @@ Put a letter to guess a word in an amount of turns.
 - [x] Read and parse words from txt file, every word on a new line containing a-z letters.
 - [x] Show guessed chars or show missing letters as dashes.
 - [x] Win or loose game based on left letters or turns.
-- [ ] Draw hangman after each guess turn.
+- [x] Draw hangman after each guess turn.
 
 #### How to run
 
